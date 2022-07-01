@@ -21,9 +21,7 @@ jobs:
             java-version: '8'
       - name: Build application
         run: |
-            ls
-            cd ..
-            ls
+            cd Jar-CICD
             mvn -B clean package -DskipTests --file pom.xml
       - name: Build and push
         uses: docker/build-push-action@v3
