@@ -16,7 +16,7 @@ jobs:
             mvn -B clean package -DskipTests --file pom.xml
       - uses: mr-smithers-excellent/docker-build-push@v5
         with:
-            image: imajeetyadav/jar-cicd:latest
+            image: imajeetyadav/jar-cicd
             registry: docker.io
             username: ${{ secrets.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
