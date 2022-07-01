@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Jar-CICD" target="11" />
+      <module name="Jar-CICD" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
