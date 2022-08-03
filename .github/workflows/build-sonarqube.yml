@@ -1,8 +1,9 @@
 name: Build and Code Testing by SONARQUBE
 on:
-  push:
-    branches:
-      - master # or the name of your main branch
+#   push:
+#     branches:
+#       - master # or the name of your main branch
+  workflow_dispatch:
 
 jobs:
   build:
