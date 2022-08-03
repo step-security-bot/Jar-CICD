@@ -14,7 +14,7 @@ public class JarCicdApplication {
         return "<H1> Hello World </H1>";
     }
 
-    public static void main(String[] args) {
+    public static void man(String[] args) {
         SpringApplication.run(JarCicdApplication.class, args);
     }
 
