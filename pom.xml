@@ -14,7 +14,8 @@
     <name>Jar-CICD</name>
     <description>Jar-CICD</description>
     <properties>
-        <java.version>8</java.version>
+        <java.version>8</java.version>       
+        <sonar.projectKey>imAjeetYadav_Jar-CICD</sonar.projectKey>
     </properties>
     <dependencies>
         <dependency>
