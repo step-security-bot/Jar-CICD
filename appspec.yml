@@ -10,7 +10,7 @@ hooks:
       runas: ec2-user
   AfterInstall:
     - location: scripts/build_image.sh
-      timeout: 10
+      timeout: 400
       runas: ec2-user
   ApplicationStart:
     - location: scripts/start_container.sh
