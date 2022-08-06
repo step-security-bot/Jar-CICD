@@ -8,7 +8,7 @@ on:
 
 jobs:
   continuous-deployment:
-    name: Deploy
+    name: continuous-deployment
     runs-on: ubuntu-latest
     steps:
       # Step 1
