@@ -2,4 +2,4 @@
 
 set -e
 
-docker load -i /home/ec2-user/app/JarCICD-AWSCodeDeploy.tar.gz
+docker load -i /home/ec2-user/app/jarcicd_docker_image.tar.gz
