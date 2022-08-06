@@ -9,7 +9,7 @@ hooks:
       timeout: 20
       runas: ec2-user
   AfterInstall:
-    - location: scripts/load_image.sh
+    - location: scripts/build_image.sh
       timeout: 10
       runas: ec2-user
   ApplicationStart:
