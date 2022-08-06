@@ -1,4 +1,4 @@
-name: Build and Deployment
+name: Build and Deployment - SSH
 
 on:
   #push:
