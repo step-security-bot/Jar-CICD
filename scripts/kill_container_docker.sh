@@ -2,4 +2,4 @@
 
 set -e
 
-docker rm -f JarCICD || true
+docker rm -f jarcicd || true
