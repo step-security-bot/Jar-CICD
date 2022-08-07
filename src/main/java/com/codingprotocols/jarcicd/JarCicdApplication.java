@@ -20,7 +20,7 @@ public class JarCicdApplication {
 
     @GetMapping(value = "/")
     public String helloWorld() {
-        String response = "<H1> Hello World - Test 1 </H1>" + new Date();
+        String response = "<H1> Hello World - Testing complete </H1>" + new Date();
         LOG.log(Level.INFO, response);
 
         return response;
