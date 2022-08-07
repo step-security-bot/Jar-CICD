@@ -10,8 +10,8 @@ permissions:
     pattern: "*"
     owner: ec2-user
     mode: 755
-#     type:
-#       - file
+    type:
+      - file
 hooks:
   ApplicationStop:
     - location: scripts/kill_container.sh
