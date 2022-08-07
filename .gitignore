@@ -12,7 +12,7 @@
 
 # Package Files #
 #target
-elk-example.log
+#elk-example.log
 *.war
 *.nar
 *.ear
