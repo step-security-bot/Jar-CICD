@@ -3,6 +3,15 @@ os: linux
 files:
   - source: .
     destination: /home/ec2-user/app
+ 
+permissions:
+  #set permission to all files inside the "folder1" folder
+  - object: /home/ec2-user/app/
+    pattern: "*"
+    owner: ec2-user
+    mode: 755
+#     type:
+#       - file
 hooks:
   ApplicationStop:
     - location: scripts/kill_container.sh
