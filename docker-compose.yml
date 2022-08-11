@@ -7,7 +7,7 @@ services:
     restart: always
     image: fluent/fluentd:v1.15.0-1.0
     volumes:
-      - /Users/ajeetyadav/Projects/Freelancing Projects/Github-Sonor-ELK/Jar-CICD:/fluentd/etc
+      - /log:/fluentd/etc
     ports:
       - "24224:24224"
     networks:
