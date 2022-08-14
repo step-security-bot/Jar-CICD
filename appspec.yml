@@ -3,6 +3,8 @@ os: linux
 files:
   - source: .
     destination: /home/ec2-user/app
+
+file_exists_behavior: OVERWRITE
  
 # permissions:
 #   #set permission to all files inside the "folder1" folder
