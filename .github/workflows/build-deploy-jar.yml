@@ -11,16 +11,21 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Harden Runner
+      uses: step-security/harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845 # v2.4.1
+      with:
+        egress-policy: audit
+
+    - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
     - name: Set up JDK 8
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@b6e674f4b717d7b0ae3baee0fbe79f498905dfde # v1.4.4
       with:
         java-version: '8'
     - name: Build application
       run: |
         mvn -B clean package -DskipTests --file pom.xml
     - name: Upload Jar
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # v2.3.1
       with:
         name: artifact
         path: target/Jar-CICD-0.0.1-SNAPSHOT.jar
@@ -30,14 +35,19 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845 # v2.4.1
+        with:
+          egress-policy: audit
+
       - name: Download Jar
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@cbed621e49e4c01b044d60f6c80ea4ed6328b281 # v2.1.1
         with:
           name: artifact
 
       #Deploy the artifact into Ubuntu
       - name: Spring boot code Deploy
-        uses: easingthemes/ssh-deploy@main
+        uses: easingthemes/ssh-deploy@3884c8554ff45c0fd37d3f12a76288d06ce7a2ff # main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_DEV }}
           REMOTE_HOST: ${{ secrets.SSH_HOST_DEV }}
@@ -45,7 +55,7 @@ jobs:
 
       #Post deployment
       - name: Post Deploy
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@a01d3ea1dfcdbed994ab6c85fb3d7daf5e785f85 # master
         with:
             host: ${{ secrets.SSH_HOST_DEV }}
             username: ${{ secrets.USERNAME_DEV }}
